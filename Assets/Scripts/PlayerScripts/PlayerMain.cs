@@ -5,8 +5,12 @@ public class PlayerMain : MonoBehaviour
     public PlayerMovement PMove;
     public PlayerToggleCollisions PToggle;
     public PlayerJump PJump;
-    public SpriteRenderer PlayerSprite;
+    public Transform PlayerVisuals;
     public Rigidbody2D PlayerRb2D;
+    public PlayerAnimations PAnim;
+    public PlayerParticles PParticles;
+
+    public bool PlayerAlive;
 
     private void Start()
     {
@@ -14,5 +18,9 @@ public class PlayerMain : MonoBehaviour
         PToggle = GetComponent<PlayerToggleCollisions>();
         PJump = GetComponent<PlayerJump>();
         PlayerRb2D = GetComponent<Rigidbody2D>();
+        PAnim = GetComponent<PlayerAnimations>();
+        PParticles = GetComponent<PlayerParticles>();
+
+        PlayerAlive = true;
     }
 }
