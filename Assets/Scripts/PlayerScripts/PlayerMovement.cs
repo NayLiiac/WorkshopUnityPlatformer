@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         if (_mPlayer.GetPlayerAlive() && ctx.performed && _mPlayer.PJump.PlayerIsOnTheGround())
         {
             _mPlayer.PParticles.PlaySpeedParticlesEffects();
-            _camera.DOOrthoSize(5, 1f);
+            _camera.DOOrthoSize(6, 1f);
             _horizontalDir = ctx.ReadValue<Vector2>().x;
             _mPlayer.PAnim.PlayerRunningAnim();
 
@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         else if (_mPlayer.GetPlayerAlive() && ctx.canceled || !_mPlayer.PJump.PlayerIsOnTheGround()) 
         {
             _mPlayer.PParticles.StopSpeedParticlesEffects();
-            _camera.DOOrthoSize(4, 1f);
+            _camera.DOOrthoSize(5, 1f);
         } 
     }
 }
