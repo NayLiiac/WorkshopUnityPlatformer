@@ -11,13 +11,10 @@ public class PlayerThroughObstacle : MonoBehaviour
         {
             if (other.gameObject.CompareTag("ObstacleA"))
             {
-                Debug.Log("Play Blue");
-
                 _mPlayer.PParticles.ThroughBlueObstacleEffect.Play();
             }
             else if (other.gameObject.CompareTag("ObstacleB"))
             {
-                Debug.Log("Play Green");
                 _mPlayer.PParticles.ThroughGreenObstacleEffect.Play();
             }
         }
