@@ -1,0 +1,22 @@
+Joueur :
+Animations Course / Saut / Chute / Idle / Mort
+FeedBack joueur : 
+- Lorsque le joueur court, un effet de vitesse est créé avec le recul de la caméra, et deux particules, une prenant visualisée sur tout l'écran, et une autre sur le joueur. Le sprite du joueur est légèrement squished / stretched pour donner une meilleure impression de mouvement
+- Lorsque le joueur freine ou est arrêté, l'effet de vitesse est arrêté.
+- État du joueur : le joueur a une particule et une lumière de couleur sur lui afin de rendre visible son état actuel.
+- Lorsque l'on change d'état, une "vague" est créée et la particule change de couleur afin de correspondre au nouvel état.
+- Lorsque le joueur rentre dans un obstacle en étant dans le mauvais état, un effet de crash est joué ( + tremblement de caméra) et le joueur lance son animation de mort. Si le joueur joue à la manette, la manette vibre.
+- Lorsque le joueur passe avec succès à travers un obstacle, un effet est créé.
+
+Nuage de poison :
+- Le nuage est composé de particules
+- Lorsque le nuage se rapproche, le jeu prend une teinte rose/violette grâce à une lumière, le joueur a en plus de ses particules de couleurs une nouvelle particule violette qui a pour but de lui indiquer qu'il ne doit pas traîner.
+- Lorsque le nuage est trop proche, la particule violette du joueur fait un effet d'explosion et le joueur lance son animation de mort
+- Lorsque le joueur sort du nuage, les effets sont retirés
+
+Ligne d'arrivée :
+- Le sprite de la ligne d'arrivée fait un léger mouvement, et disparaît puis réapparaît progressivement pour être plus indicatif
+- Lorsque le joueur touche la ligne d'arrivée, deux feux d'artifices de couleurs différentes sont joués (VFX) et le sprite est squished / stretched 
+- Lors de la félicitations de la victoire, si le joueur touche plusieurs fois la ligne d'arrivée le drapeau réagit en conséquence
+
+
