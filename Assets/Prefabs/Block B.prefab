@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2879321317728277195}
   m_Layer: 7
   m_Name: Block B
-  m_TagString: Untagged
+  m_TagString: ObstacleB
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74a6a142b48d42449875de34685f220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 7919514124048582016, guid: ab93f9df12da5e44bb0679eeb0b92f9f, type: 3}
+  Camera: {fileID: 0}
   CooldownBeforeRestart: 3
 --- !u!50 &3499514472608706552
 Rigidbody2D:

@@ -18,6 +18,10 @@ public class PlayerParticles : MonoBehaviour
     public ParticleSystem PlayerBlueStateEffect;
     public ParticleSystem PlayerGreenStateEffect;
 
+    [Header("Player Through Obstacles Effect")]
+    public ParticleSystem ThroughBlueObstacleEffect;
+    public ParticleSystem ThroughGreenObstacleEffect;
+
     /// <summary>
     ///  particles to play when player is running
     /// </summary>

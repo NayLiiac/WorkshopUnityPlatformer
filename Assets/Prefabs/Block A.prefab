@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3373904247621193659}
   m_Layer: 6
   m_Name: Block A
-  m_TagString: Untagged
+  m_TagString: ObstacleA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06be8caaba3f7204787e5353a3fe3135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KillZoneType: 0
   _resetGame: {fileID: 572307202842747549}
   _shakeDuration: 2
   _shakeStrength: 3
