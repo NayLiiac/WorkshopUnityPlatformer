@@ -1,4 +1,3 @@
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
@@ -17,7 +16,7 @@ public class PlayerToggleCollisions : MonoBehaviour
 
     public void ToggleCollision(InputAction.CallbackContext ctx)
     {
-        if(_mPlayer.PlayerAlive && ctx.started)
+        if(_mPlayer.GetPlayerAlive() && ctx.started)
         {
             switch (this.gameObject.layer)
             {

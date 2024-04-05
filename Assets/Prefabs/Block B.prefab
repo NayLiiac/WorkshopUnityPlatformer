@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06be8caaba3f7204787e5353a3fe3135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KillZoneType: 0
   _resetGame: {fileID: 18819222807377387}
   _shakeDuration: 2
   _shakeStrength: 3

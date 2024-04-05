@@ -5,8 +5,11 @@ using UnityEngine.InputSystem;
 
 public class KillZone : MonoBehaviour
 {
+    public KillZoneTypes KillZoneType;
     [SerializeField]
     private ResetGame _resetGame;
+
+    [Header("Cam Shaker Values")]
     [SerializeField]
     private float _shakeDuration;
     [SerializeField]
@@ -20,9 +23,12 @@ public class KillZone : MonoBehaviour
         {
             PlayerMain tempPlayerMain = collision.gameObject.GetComponent<PlayerMain>();
             tempPlayerMain.PAnim.PlayerDeathAnim();
-            tempPlayerMain.PlayerAlive = false;
+            tempPlayerMain.SetPlayerAlive(false);
 
-            _resetGame.Camera.DOShakePosition(_shakeDuration, _shakeStrength, _shakeVibrato, 90, fadeOut: true);
+            if (KillZoneType == KillZoneTypes.Crystal)
+            {
+                _resetGame.Camera.DOShakePosition(_shakeDuration, _shakeStrength, _shakeVibrato, 90, fadeOut: true);
+            }
 
             if (Gamepad.current.added)
             {
@@ -39,4 +45,10 @@ public class KillZone : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Gamepad.current.SetMotorSpeeds(0,0);
     }
+}
+
+public enum KillZoneTypes
+{
+    Crystal,
+    PoisonMist,
 }

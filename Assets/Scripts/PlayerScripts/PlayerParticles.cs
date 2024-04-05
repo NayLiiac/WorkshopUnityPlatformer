@@ -3,9 +3,17 @@ using UnityEngine;
 
 public class PlayerParticles : MonoBehaviour
 {
+    [Header("Speed Particles")]
     public List<ParticleSystem> PlayerSpeedEffects = new List<ParticleSystem>();
+
+    [Header("Death Particles")]
     public ParticleSystem PlayerHurtAnObstacleEffect;
     public ParticleSystem PlayerDiedInPoisonMist;
+
+    [Header("Player States Particles")]
+    public ParticleSystem PlayerInPoisonMist;
+    public ParticleSystem PlayerBlueStateEffect;
+    public ParticleSystem PlayerGreenStateEffect;
 
     /// <summary>
     ///  particles to play when player is running
@@ -32,7 +40,7 @@ public class PlayerParticles : MonoBehaviour
     /// <summary>
     /// particles to play when player hurt an obstacle
     /// </summary>
-    public void PlayerHurtAObstacle()
+    public void PlayerHurtAnObstacle()
     {
         PlayerHurtAnObstacleEffect.Play();
     }

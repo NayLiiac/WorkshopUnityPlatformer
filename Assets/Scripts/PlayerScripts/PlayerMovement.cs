@@ -22,14 +22,14 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         _mPlayer.PlayerRb2D.velocity = new Vector2(_horizontalDir * _playerSpeed, _mPlayer.PlayerRb2D.velocity.y);
-        if(_mPlayer.PlayerAlive && _mPlayer.PlayerRb2D.velocity.x == 0)
+        if(_mPlayer.GetPlayerAlive() && _mPlayer.PlayerRb2D.velocity.x == 0)
         {
             _mPlayer.PAnim.PlayerIdleAnim();
         }
     }
     public void OnMove(InputAction.CallbackContext ctx)
     {
-        if (_mPlayer.PlayerAlive && ctx.performed && _mPlayer.PJump.PlayerIsOnTheGround())
+        if (_mPlayer.GetPlayerAlive() && ctx.performed && _mPlayer.PJump.PlayerIsOnTheGround())
         {
             _mPlayer.PParticles.PlaySpeedParticlesEffects();
             _camera.DOOrthoSize(5, 1f);
@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
                 _mPlayer.PlayerVisuals.rotation = Quaternion.Euler(0, 0, 0);
             }
         }
-        else if (_mPlayer.PlayerAlive && ctx.canceled || !_mPlayer.PJump.PlayerIsOnTheGround()) 
+        else if (_mPlayer.GetPlayerAlive() && ctx.canceled || !_mPlayer.PJump.PlayerIsOnTheGround()) 
         {
             _mPlayer.PParticles.StopSpeedParticlesEffects();
             _camera.DOOrthoSize(4, 1f);

@@ -19,14 +19,14 @@ public class PlayerJump : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext ctx)
     {
-        if (_mPlayer.PlayerAlive && ctx.performed && PlayerIsOnTheGround())
+        if (_mPlayer.GetPlayerAlive() && ctx.performed && PlayerIsOnTheGround())
         {
             _mPlayer.PlayerRb2D.velocity = new Vector2(_mPlayer.PlayerRb2D.velocity.x, _jumpForce);
             _mPlayer.PAnim.PlayerJumpingAnim();
 
         }
-
-        if (_mPlayer.PlayerAlive && ctx.canceled && _mPlayer.PlayerRb2D.velocity.y > 0) 
+            
+        if (_mPlayer.GetPlayerAlive() && ctx.canceled && _mPlayer.PlayerRb2D.velocity.y > 0) 
         {
             _mPlayer.PlayerRb2D.velocity = new Vector2(_mPlayer.PlayerRb2D.velocity.x, _mPlayer.PlayerRb2D.velocity.y * 0.5f);
         }

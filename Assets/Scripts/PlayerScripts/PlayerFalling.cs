@@ -7,7 +7,7 @@ public class PlayerFalling : MonoBehaviour
 
     public void CheckPlayerIsFalling()
     {
-        if (_mPlayer.PlayerAlive && !_mPlayer.PJump.PlayerIsOnTheGround())
+        if (_mPlayer.GetPlayerAlive() && !_mPlayer.PJump.PlayerIsOnTheGround())
         {
             _mPlayer.PAnim.PlayerFallingAnim();
         }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMain : MonoBehaviour
@@ -10,7 +11,10 @@ public class PlayerMain : MonoBehaviour
     public PlayerAnimations PAnim;
     public PlayerParticles PParticles;
 
-    public bool PlayerAlive;
+    [SerializeField]
+    private bool _playerAlive;
+
+    public event Action<bool> PlayerAliveEvent;
 
     private void Start()
     {
@@ -20,7 +24,16 @@ public class PlayerMain : MonoBehaviour
         PlayerRb2D = GetComponent<Rigidbody2D>();
         PAnim = GetComponent<PlayerAnimations>();
         PParticles = GetComponent<PlayerParticles>();
+    }
 
-        PlayerAlive = true;
+    public void SetPlayerAlive(bool alive)
+    {
+        _playerAlive = alive;
+        PlayerAliveEvent.Invoke(_playerAlive);
+    }
+
+    public bool GetPlayerAlive()
+    {
+        return _playerAlive;
     }
 }
