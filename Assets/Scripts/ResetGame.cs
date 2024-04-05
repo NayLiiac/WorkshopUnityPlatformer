@@ -1,12 +1,21 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class ResetGame : MonoBehaviour
 {
     public Camera Camera;
     public int CooldownBeforeRestart;
+
+    private void Start()
+    {
+        if (Gamepad.current.added)
+        {
+            Gamepad.current.SetMotorSpeeds(0, 0);
+        }
+    }
 
     public void RestartGame()
     {

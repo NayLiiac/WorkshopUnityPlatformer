@@ -11,7 +11,20 @@ public class PlayerToggleCollisions : MonoBehaviour
 
     private void Start()
     {
-        _mPlayer = GetComponent<PlayerMain>();
+        StartStateEffect();
+    }
+    
+    public void StartStateEffect()
+    {
+        switch (this.gameObject.layer)
+        {
+            case 6:
+                _mPlayer.PParticles.PlayerBlueStateEffect.Play();
+                break;
+            case 7:
+                _mPlayer.PParticles.PlayerGreenStateEffect.Play();
+                break;
+        }
     }
 
     public void ToggleCollision(InputAction.CallbackContext ctx)
@@ -21,14 +34,18 @@ public class PlayerToggleCollisions : MonoBehaviour
             switch (this.gameObject.layer)
             {
                 case 6:
+                    _mPlayer.PParticles.PlayerBlueStateEffect.Stop();
                     _mPlayer.PAnim.PlayColorChanges("blue");
                     this.gameObject.layer = 7;
                     _playerLight.color = Color.green;
+                    _mPlayer.PParticles.PlayerGreenStateEffect.Play();
                     break;
                 case 7:
+                    _mPlayer.PParticles.PlayerGreenStateEffect.Stop();
                     _mPlayer.PAnim.PlayColorChanges("green");
                     this.gameObject.layer = 6;
                     _playerLight.color = Color.blue;
+                    _mPlayer.PParticles.PlayerBlueStateEffect.Play();
                     break;
             }
         }

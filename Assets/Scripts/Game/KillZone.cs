@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.PostProcessing;
 
 public class KillZone : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class KillZone : MonoBehaviour
             if (KillZoneType == KillZoneTypes.Crystal)
             {
                 _resetGame.Camera.DOShakePosition(_shakeDuration, _shakeStrength, _shakeVibrato, 90, fadeOut: true);
+                tempPlayerMain.PParticles.PlayerHurtAnObstacle();
+            }
+            else
+            {
+                tempPlayerMain.PParticles.PlayDiedInPoisonMistEffect();
             }
 
             if (Gamepad.current.added)

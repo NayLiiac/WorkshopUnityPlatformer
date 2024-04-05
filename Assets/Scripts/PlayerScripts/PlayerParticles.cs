@@ -4,11 +4,14 @@ using UnityEngine;
 public class PlayerParticles : MonoBehaviour
 {
     [Header("Speed Particles")]
-    public List<ParticleSystem> PlayerSpeedEffects = new List<ParticleSystem>();
+    [SerializeField]
+    private List<ParticleSystem> _playerSpeedEffects = new List<ParticleSystem>();
 
     [Header("Death Particles")]
-    public ParticleSystem PlayerHurtAnObstacleEffect;
-    public ParticleSystem PlayerDiedInPoisonMist;
+    [SerializeField]
+    private ParticleSystem PlayerHurtAnObstacleEffect;
+    [SerializeField]
+    private ParticleSystem PlayerDiedInPoisonMist;
 
     [Header("Player States Particles")]
     public ParticleSystem PlayerInPoisonMist;
@@ -20,9 +23,9 @@ public class PlayerParticles : MonoBehaviour
     /// </summary>
     public void PlaySpeedParticlesEffects()
     {
-        for (int i = 0; i < PlayerSpeedEffects.Count; i++) 
+        for (int i = 0; i < _playerSpeedEffects.Count; i++) 
         {
-            PlayerSpeedEffects[i].Play(); 
+            _playerSpeedEffects[i].Play(); 
         }
     }
 
@@ -31,9 +34,9 @@ public class PlayerParticles : MonoBehaviour
     /// </summary>
     public void StopSpeedParticlesEffects()
     {
-        for (int i = 0; i < PlayerSpeedEffects.Count; i++)
+        for (int i = 0; i < _playerSpeedEffects.Count; i++)
         {
-            PlayerSpeedEffects[i].Stop();
+            _playerSpeedEffects[i].Stop();
         }
     }
 

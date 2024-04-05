@@ -23,7 +23,6 @@ public class PlayerMain : MonoBehaviour
         PJump = GetComponent<PlayerJump>();
         PlayerRb2D = GetComponent<Rigidbody2D>();
         PAnim = GetComponent<PlayerAnimations>();
-        PParticles = GetComponent<PlayerParticles>();
     }
 
     public void SetPlayerAlive(bool alive)
